@@ -1,38 +1,54 @@
 <template>
-    <div class="col-7">
-            <img src="https://restcountries.eu/data/fra.svg" alt="country flag" style="width: 300px"/>
-            <h1>{{  }}</h1>
-            <table class="table">
-              <thead></thead>
-              <tbody>
-                <tr>
-                  <td style="width: 30%">Capital</td>
-                  <td>{{ }}</td>
-                </tr>
-                <tr>
-                  <td>Area</td>
-                  <td>
-                    {{ }} km <sup>2</sup>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Borders</td>
-                  <td>
-                    <ul>
-                      <li>
-                        <router-link href=""> {{  }}</router-link>
-                      </li>
-                    </ul>  
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+  <div class="col-7">
+    <img src="https://restcountries.eu/data/fra.svg" alt="country flag" style="width: 300px"/>
+    <h1>France</h1>
+    <table class="table">
+      <thead></thead>
+      <tbody>
+        <tr>
+          <td style="width: 30%">Capital</td>
+          <td>Paris</td>
+        </tr>
+        <tr>
+          <td>Area</td>
+          <td>
+            551695 km <sup>2</sup>
+          </td>
+        </tr>
+        <tr>
+          <td>Borders</td>
+          <td>
+            <ul>
+              <li><a href="/AND">Andorra</a></li>
+              <li><a href="/BEL">Belgium</a></li>
+              <li><a href="/DEU">Germany</a></li>
+              <li><a href="/ITA">Italy</a></li>
+              <li><a href="/MCO">Monaco</a></li>
+              <li><a href="/ESP">Spain</a></li>
+              <li><a href="/CHE">Switzerland</a></li>
+            </ul>  
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
+    import countries from "../countries.json"
+
     export default {
-        name: "CountryDetails"
+        name: "CountryDetails",
+        data() {
+            return {
+                
+            }
+        },
+        methods: {
+          getCountry() {
+            let alpha3Code = this.$route.params.alpha3Code
+          }
+        }
     }
 </script>
 
