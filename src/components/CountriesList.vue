@@ -25,9 +25,21 @@
         name: "CountriesList",
         data() {
             return {
-                countries
+                countries: {}
             }
-        }
+        },
+        methods: {
+            getCountries () {
+                return countries.sort((a, b) => a.name.common > b.name.common)
+            }
+        },
+        async mounted () {
+
+            const response = await fetch("https://ih-countries-api.herokuapp.com/countries");
+            const jsonData = await response.json();
+            this.countries = jsonData.sort((a, b) => a.name.common > b.name.common);
+        
+        } 
     }
 </script>
 
